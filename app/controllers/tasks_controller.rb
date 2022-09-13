@@ -5,6 +5,11 @@ class TasksController < ApplicationController
     render json: @tasks
   end
 
+  def show
+    @task = Task.find(params[:id])
+    render json: @task
+  end
+
   def create
     @newTask = Task.create(
       content: params[:content]
