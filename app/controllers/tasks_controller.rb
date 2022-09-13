@@ -5,4 +5,11 @@ class TasksController < ApplicationController
     render json: @tasks
   end
 
+  def create
+    @newTask = Task.create(
+      content: params[:content]
+    )
+    render json: @newTask
+  end
+
 end
