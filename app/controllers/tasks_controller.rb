@@ -2,12 +2,12 @@ class TasksController < ApplicationController
 
   def index
     tasks = Task.all
-    render json: tasks
+    render json: tasks, except: [:created_at, :updated_at]
   end
 
   def show
     task = Task.find(params[:id])
-    render json: task
+    render json: task, except: [:created_at, :updated_at]
   end
 
   def create
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     tasks = Task.all
     deleted_task = Task.find(params[:id])
     deleted_task.destroy
-    render json: tasks
+    render json: tasks, except: [:created_at, :updated_at]
   end
 
 end
