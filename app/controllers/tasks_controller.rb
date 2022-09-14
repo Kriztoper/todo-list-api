@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    tasks = Task.all
+    tasks = Task.all.sort_by { |t| t.order_number }
     render json: tasks, except: [:created_at, :updated_at]
   end
 
