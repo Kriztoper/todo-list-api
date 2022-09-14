@@ -11,16 +11,18 @@ class TasksController < ApplicationController
   end
 
   def create
-    @newTask = Task.create(
-      content: params[:content]
+    @new_task = Task.create(
+      content: params[:content],
+      order_number: params[:order_number]
     )
-    render json: @newTask
+    render json: @new_task
   end
 
   def update
     @task = Task.find(params[:id])
     @task.update(
-      content: params[:content]
+      content: params[:content],
+      order_number: params[:order_number]
     )
     render json: @task
   end
