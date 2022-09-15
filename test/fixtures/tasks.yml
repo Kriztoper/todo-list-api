@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  content: MyString
+buy_grocery:
+  content: Buy grocery
+  order_number: 1
 
-two:
-  content: MyString
+pay_bills:
+  content: Pay bills
+  order_number: 2
+
+wash_laundry:
+  content: Wash laundry
+  order_number: 3
