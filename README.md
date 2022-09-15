@@ -1,24 +1,28 @@
-# README
+# TODO List API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple TODO list API wherein the idea for the API will be used to support the drage and drop feature of of a 
+TODO list application
 
-Things you may want to cover:
+* **Ruby version**: ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin19]
 
-* Ruby version
 
-* System dependencies
+* **Rails version**: Rails 6.1.7
 
-* Configuration
 
-* Database creation
+* **Bundler version**: 2.2.25
 
-* Database initialization
 
-* How to run the test suite
+* **To install gem dependencies on local** (run the following command) (Note: The dependency management tool we are 
+using for this project is **Bundler**): `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* **Database**: sqlite3 v1.5.0
 
-* ...
+
+* **Database creation and initialization** (run the following command): `rails db:create db:migrate db:seed`
+
+
+* **Run Puma server on local (run the following command)**: `rails s`
+
+
+* **Puma server version**: 5.6.5 (ruby 2.6.3-p62) ("Birdie's Version")
