@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope :api do
     scope :v1 do
-      get '/tasks/reorder/:this_id/to/:target_order_number', to: 'tasks#reorder'
+      post '/tasks/reorder/:this_id/to/:target_order_number', to: 'tasks#reorder'
       resources :tasks
     end
   end
