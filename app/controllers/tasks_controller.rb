@@ -85,37 +85,15 @@ class TasksController < ApplicationController
     task_to_move = Task.find(params[:this_id])
     target_order_number = params[:target_order_number].to_i
     if task_to_move.order_number < target_order_number
-      move_up_tasks_above_target task_to_move, target_order_number
+      service = ReorderTaskService.new
+      service.move_up_tasks_above_target task_to_move, target_order_number
     elsif task_to_move.order_number > target_order_number
-      move_down_tasks_below_target task_to_move, target_order_number
+      service = ReorderTaskService.new
+      service.move_down_tasks_below_target task_to_move, target_order_number
     end
     render json: task_to_move
   end
 
   private
-
-  def move_up_tasks_above_target(task_to_move, target_order_number)
-    from_range = task_to_move.order_number + 1
-    to_range = target_order_number
-    (from_range..to_range).each do |order_number|
-      current_task = Task.where(order_number: order_number).first
-      unless current_task.nil?
-        current_task.update_column(:order_number, current_task.order_number - 1)
-      end
-    end
-    task_to_move.update(order_number: target_order_number)
-  end
-
-  def move_down_tasks_below_target(task_to_move, target_order_number)
-    from_range = target_order_number
-    to_range = task_to_move.order_number - 1
-    (from_range..to_range).each do |order_number|
-      current_task = Task.where(order_number: order_number).first
-      unless current_task.nil?
-        current_task.update_column(:order_number, current_task.order_number + 1)
-      end
-    end
-    task_to_move.update(order_number: target_order_number)
-  end
 
 end
