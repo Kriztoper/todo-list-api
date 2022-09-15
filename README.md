@@ -22,7 +22,10 @@ using for this project is **Bundler**): `bundle install`
 * **Database creation and initialization** (run the following command): `rails db:create db:migrate db:seed`
 
 
-* **Run Puma server on local (run the following command)**: `rails s`
+* **Run Puma server on local** (run the following command): `rails s`
 
 
 * **Puma server version**: 5.6.5 (ruby 2.6.3-p62) ("Birdie's Version")
+
+
+* **To run the test** (run the following command): `rails test`
